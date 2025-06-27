@@ -1,64 +1,54 @@
-# === Java build artifacts ===
+# =========================
+# 기본 Java/Eclipse 무시 파일
+# =========================
 *.class
-*.war
-*.ear
-*.jar
-!lib/cos.jar
-!lib/ojdbc17.jar
+*.log
+*.tmp
 
-# === Build directories ===
+# 빌드 디렉터리
 /bin/
 /build/
 /target/
 /out/
 /dist/
 
-# === Eclipse / STS ===
-.springBeans
-.wtpmodules
-.metadata
-.mymetadata
-.factorypath
+# =========================
+# Eclipse / STS 설정 파일 포함시키기 위해 예외 처리
+# =========================
+# 무시하지 않도록 주석처리하거나 예외 추가
+# .project
+# .classpath
+# .settings/
+!.project
+!.classpath
+!.settings/
 
-# === Maven ===
-/.mvn/
-/.mvnw
-/mvnw.cmd
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-target/
+# =========================
+# 외부 라이브러리 JAR 파일 제외하지 않기
+# =========================
+*.jar
+!lib/cos.jar
+!lib/ojdbc17.jar
 
-# === Gradle ===
-.gradle/
-/build/
-/!gradle/wrapper/gradle-wrapper.jar
+# 혹시 WebContent/WEB-INF/lib 아래 직접 넣었다면 아래도 추가
+!WebContent/WEB-INF/lib/cos.jar
+!WebContent/WEB-INF/lib/ojdbc17.jar
 
-# === Web (Dynamic Web Project) specific ===
-/WEB-INF/classes/
-/WEB-INF/lib/*  # 제외할 경우 전체 삭제되므로 아래 예외 항목과 함께 사용
-!WEB-INF/lib/cos.jar
-!WEB-INF/lib/ojdbc17.jar
-
-# === Logs and temp files ===
-*.log
-*.tmp
-
-# === IDE and system files ===
-*.iml
-.idea/
+# =========================
+# IDE 관련 기타 무시 항목
+# =========================
+# VSCode / IntelliJ
 .vscode/
+.idea/
+*.iml
+
+# macOS / Windows
 .DS_Store
 Thumbs.db
 
-# === Node.js (JS 관리용 빌드 툴 사용 시) ===
-node_modules/
-package-lock.json
-yarn.lock
-
-# === Environment ===
-.env
-.env.*
-*.local.*
+# Maven / Gradle 빌드 무시 항목 (필요 시)
+.mvn/
+.mvnw
+mvnw.cmd
+.gradle/
+build/
