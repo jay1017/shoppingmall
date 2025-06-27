@@ -1,1 +1,2 @@
-# shoppingmall
+# shop
+shopping mall project
