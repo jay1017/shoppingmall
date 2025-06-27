@@ -14,9 +14,6 @@
 /dist/
 
 # === Eclipse / STS ===
-.settings/
-.project
-.classpath
 .springBeans
 .wtpmodules
 .metadata
